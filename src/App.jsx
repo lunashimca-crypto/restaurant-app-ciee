@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import "./index.css";
 
 const SHEET_URL = "https://script.google.com/macros/s/AKfycbwyDZhP0qQNROZPoyDq364K9r4CVBHk32giHcRzIu6JWw-SFlMyG_mpj2vZA-8J52QG/exec"
+const B = import.meta.env.BASE_URL;
 
 async function sheetGet(action){try{const r=await fetch(`${SHEET_URL}?action=${action}`);return await r.json();}catch(e){return null;}}
 async function sheetPost(body){try{await fetch(SHEET_URL,{method:"POST",body:JSON.stringify(body)});}catch(e){}}
@@ -82,11 +83,11 @@ const HAECHI=[
 ];
 
 const HAECHI_IMGS={
-  1:"/haechi/1.png",2:"/haechi/2.png",3:"/haechi/3.png",4:"/haechi/4.png",
-  5:"/haechi/5.png",6:"/haechi/6.png",7:"/haechi/7.png",8:"/haechi/8.png",
-  9:"/haechi/9.png",10:"/haechi/10.png",11:"/haechi/11.png",12:"/haechi/12.png",
-  13:"/haechi/13.png",14:"/haechi/14.png",15:"/haechi/15.png",16:"/haechi/16.png",
-  17:"/haechi/17.png",18:"/haechi/18.png",19:"/haechi/19.png",
+  1:`${B}haechi/1.png`,2:`${B}haechi/2.png`,3:`${B}haechi/3.png`,4:`${B}haechi/4.png`,
+  5:`${B}haechi/5.png`,6:`${B}haechi/6.png`,7:`${B}haechi/7.png`,8:`${B}haechi/8.png`,
+  9:`${B}haechi/9.png`,10:`${B}haechi/10.png`,11:`${B}haechi/11.png`,12:`${B}haechi/12.png`,
+  13:`${B}haechi/13.png`,14:`${B}haechi/14.png`,15:`${B}haechi/15.png`,16:`${B}haechi/16.png`,
+  17:`${B}haechi/17.png`,18:`${B}haechi/18.png`,19:`${B}haechi/19.png`,
 };
 
 function analyzeHaechi(data){
@@ -110,7 +111,7 @@ function DanChungBorder(){return(<svg width="100%" height="12" viewBox="0 0 400 
 function KoreanPattern({opacity=1}){return(<svg width="100%" height="100%" viewBox="0 0 400 80" preserveAspectRatio="xMidYMid slice" style={{position:"absolute",top:0,left:0,pointerEvents:"none",opacity}}>{/* diagonal gold lines */}{Array.from({length:12},(_,i)=>(<line key={i} x1={i*40-20} y1="0" x2={i*40+60} y2="80" stroke="#C49A3C" strokeWidth=".7" opacity=".18"/>))}{/* corner diamonds */}{[[0,0],[400,0],[0,80],[400,80]].map(([x,y],i)=>(<g key={i} transform={`translate(${x},${y})`}><polygon points="0,-18 10,-8 0,2 -10,-8" fill="#C49A3C" opacity=".22"/></g>))}{/* center ornament row */}{[60,140,200,260,340].map((x,i)=>(<g key={i} transform={`translate(${x},40)`}><circle cx="0" cy="0" r="3" fill="none" stroke="#C49A3C" strokeWidth="1.2" opacity=".35"/><circle cx="0" cy="0" r="1" fill="#C49A3C" opacity=".45"/><line x1="-12" y1="0" x2="-6" y2="0" stroke="#C49A3C" strokeWidth=".8" opacity=".25"/><line x1="6" y1="0" x2="12" y2="0" stroke="#C49A3C" strokeWidth=".8" opacity=".25"/></g>))}{/* top & bottom thin gold border */}<line x1="0" y1="2" x2="400" y2="2" stroke="#C49A3C" strokeWidth=".6" opacity=".3"/><line x1="0" y1="78" x2="400" y2="78" stroke="#C49A3C" strokeWidth=".6" opacity=".3"/></svg>);}
 
 function EggSVG({pct,sz=130}){const cl=Math.min(pct/.7,1);return(<svg viewBox="0 0 130 130" width={sz} height={sz}><ellipse cx="65" cy="120" rx="34" ry="6" fill="#00000010"/><defs><radialGradient id="eg" cx="42%" cy="35%"><stop offset="0%" stopColor="#FFFBF0"/><stop offset="70%" stopColor="#F0E5D2"/><stop offset="100%" stopColor="#E0A858"/></radialGradient></defs><path d="M65 18 C92 18 105 58 105 82 C105 104 88 116 65 116 C42 116 25 104 25 82 C25 58 38 18 65 18 Z" fill="url(#eg)" stroke={C.gold} strokeWidth="2"/>{cl>.15&&<path d="M65 40 L60 52 L68 60 L62 70" fill="none" stroke={C.red} strokeWidth="2" strokeLinecap="round"/>}{cl>.4&&<path d="M68 60 L78 64 L74 74 L82 80" fill="none" stroke={C.red} strokeWidth="2" strokeLinecap="round"/>}{cl>.6&&<path d="M62 70 L52 76 L58 86" fill="none" stroke={C.teal} strokeWidth="2" strokeLinecap="round"/>}{cl>.85&&<path d="M45 60 L40 70 M88 55 L94 64" fill="none" stroke={C.teal} strokeWidth="1.5" strokeLinecap="round"/>}<path d="M95 30 l2 5 l5 2 l-5 2 l-2 5 l-2-5 l-5-2 l5-2z" fill={C.red} opacity=".8"/></svg>);}
-function ChickSVG({sz=130}){return(<div style={{width:sz,height:sz,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"center"}}><img src="/haechi/chick.png" alt="chick" style={{maxWidth:"100%",maxHeight:"100%",objectFit:"contain"}}/></div>);}
+function ChickSVG({sz=130}){return(<div style={{width:sz,height:sz,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"center"}}><img src={`${B}haechi/chick.png`} alt="chick" style={{maxWidth:"100%",maxHeight:"100%",objectFit:"contain"}}/></div>);}
 
 function KoreanGameHero(){
   return(
@@ -150,7 +151,7 @@ function KoreanGameHero(){
         <text x="130" y="186" textAnchor="middle" fontSize="16" fontWeight="700" fill={C.gold} fontFamily="Georgia" opacity="0.5">食</text>
       </svg>
       <div style={{position:"absolute",top:65,left:"50%",transform:"translateX(-50%)",width:185}}>
-        <img src="/haechi/stamp.png" alt="stamp" style={{width:"100%",objectFit:"contain",display:"block"}}/>
+        <img src={`${B}haechi/stamp.png`} alt="stamp" style={{width:"100%",objectFit:"contain",display:"block"}}/>
       </div>
     </div>
   );
@@ -164,7 +165,7 @@ function HaechiBadge({haechi,sz=220}){
   return(<svg viewBox="0 0 220 220" width={sz} height={sz}><circle cx="110" cy="110" r="105" fill={bg} stroke={C.gold} strokeWidth="4"/><text x="110" y="125" textAnchor="middle" fontSize="80">🦁</text></svg>);
 }
 
-function Stamp({day,idx=0,sz=58,big=false}){const done=dDone(day);if(!done)return(<svg viewBox="0 0 58 58" width={sz} height={sz}><circle cx="29" cy="29" r="20" fill="none" stroke={C.bdrL} strokeWidth="2" strokeDasharray="4,3"/></svg>);const rot=((idx*23)%15)-7;if(big)return(<div style={{width:sz,height:sz,display:"flex",alignItems:"center",justifyContent:"center",overflow:"visible",position:"relative"}}><img src="/haechi/stamp.png" alt="stamp" style={{width:sz*2.1,height:sz*2.1,objectFit:"contain",transform:`rotate(${rot}deg)`,opacity:.88,filter:"sepia(10%) saturate(120%) drop-shadow(0 2px 6px rgba(168,79,51,.3))",position:"absolute"}}/></div>);return(<div style={{width:sz,height:sz,display:"flex",alignItems:"center",justifyContent:"center"}}><img src="/haechi/stamp.png" alt="stamp" style={{width:"92%",height:"92%",objectFit:"contain",transform:`rotate(${rot}deg)`,opacity:.9,filter:"drop-shadow(0 2px 8px rgba(168,79,51,.35))"}}/></div>);}
+function Stamp({day,idx=0,sz=58,big=false}){const done=dDone(day);if(!done)return(<svg viewBox="0 0 58 58" width={sz} height={sz}><circle cx="29" cy="29" r="20" fill="none" stroke={C.bdrL} strokeWidth="2" strokeDasharray="4,3"/></svg>);const rot=((idx*23)%15)-7;if(big)return(<div style={{width:sz,height:sz,display:"flex",alignItems:"center",justifyContent:"center",overflow:"visible",position:"relative"}}><img src={`${B}haechi/stamp.png`} alt="stamp" style={{width:sz*2.1,height:sz*2.1,objectFit:"contain",transform:`rotate(${rot}deg)`,opacity:.88,filter:"sepia(10%) saturate(120%) drop-shadow(0 2px 6px rgba(168,79,51,.3))",position:"absolute"}}/></div>);return(<div style={{width:sz,height:sz,display:"flex",alignItems:"center",justifyContent:"center"}}><img src={`${B}haechi/stamp.png`} alt="stamp" style={{width:"92%",height:"92%",objectFit:"contain",transform:`rotate(${rot}deg)`,opacity:.9,filter:"drop-shadow(0 2px 8px rgba(168,79,51,.35))"}}/></div>);}
 
 function LeafTree({leafCount,totalUsers}){
   const MAX=Math.max((totalUsers||10)*DAYS,70);
@@ -399,7 +400,7 @@ export default function App(){
     <div style={{padding:"1rem 1.25rem .85rem",position:"relative",overflow:"hidden",minHeight:70,background:"linear-gradient(135deg,#5C2418 0%,#8A3F26 55%,#6B2E1C 100%)"}}>
       <KoreanPattern opacity={1}/>
       {/* decorative stamp — right side */}
-      <img src="/haechi/stamp.png" alt="" style={{position:"absolute",right:-8,top:"65%",transform:"translateY(-50%) rotate(12deg)",width:80,height:80,objectFit:"contain",opacity:.9,filter:"brightness(0) saturate(100%) invert(82%) sepia(45%) saturate(600%) hue-rotate(345deg) brightness(1.05)",pointerEvents:"none",zIndex:1}}/>
+      <img src={`${B}haechi/stamp.png`} alt="" style={{position:"absolute",right:-8,top:"65%",transform:"translateY(-50%) rotate(12deg)",width:80,height:80,objectFit:"contain",opacity:.9,filter:"brightness(0) saturate(100%) invert(82%) sepia(45%) saturate(600%) hue-rotate(345deg) brightness(1.05)",pointerEvents:"none",zIndex:1}}/>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:".25rem",position:"relative",zIndex:2}}>
         <div style={{display:"flex",flexDirection:"column",gap:2}}>
           <span style={{fontSize:8,color:"rgba(255,255,255,.45)",fontWeight:700,letterSpacing:".25em",textTransform:"uppercase",fontFamily:"'Playfair Display',Georgia,serif"}}>Official Program</span>
@@ -423,7 +424,7 @@ export default function App(){
       <div style={{textAlign:"center",padding:"1.25rem 1.5rem 0"}}>
         <div style={{margin:"0 auto .625rem",width:140,height:140,position:"relative",display:"flex",alignItems:"center",justifyContent:"center"}}>
           <div style={{position:"absolute",inset:0,borderRadius:"50%",background:`radial-gradient(circle,rgba(168,79,51,.15) 0%,transparent 70%)`,filter:"blur(8px)"}}/>
-          <img src="/haechi/stamp.png" alt="stamp" style={{width:"100%",height:"100%",objectFit:"contain",display:"block",position:"relative",filter:"drop-shadow(0 6px 20px rgba(168,79,51,.3)) drop-shadow(0 2px 8px rgba(0,0,0,.15))"}}/>
+          <img src={`${B}haechi/stamp.png`} alt="stamp" style={{width:"100%",height:"100%",objectFit:"contain",display:"block",position:"relative",filter:"drop-shadow(0 6px 20px rgba(168,79,51,.3)) drop-shadow(0 2px 8px rgba(0,0,0,.15))"}}/>
         </div>
         <RevealText text="한국 음식 여행" delay={300} speed={60} tag="div" style={{fontSize:11,letterSpacing:".3em",color:C.inkLL,textTransform:"uppercase",marginBottom:".4rem"}}/>
         <div style={{fontSize:30,marginBottom:".5rem",fontFamily:"'Playfair Display',Georgia,serif",fontWeight:900,color:"#8B3A2A",lineHeight:1.2}}><RevealText text="CIEE Korea" delay={700} speed={55}/><br/><RevealText text="Food Journey" delay={1200} speed={55}/></div>
