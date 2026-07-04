@@ -1,0 +1,28 @@
+:root {
+  --c-bg: #F4E6D8;
+  --c-bg-a: #E6D0BC;
+  --c-paper: #FBF3EA;
+  --c-paper-d: #E0CDB8;
+  --c-red: #A84F33;
+  --c-red-l: #F2E0D6;
+  --c-red-d: #7A3622;
+  --c-gold: #BD8A3C;
+  --c-gold-l: #F3E7CF;
+  --c-gold-d: #8A6020;
+  --c-teal: #B05E40;
+  --c-teal-l: #F0DED4;
+  --c-teal-d: #7A3622;
+  --c-ink: #3D2417;
+  --c-ink-l: #6E4A37;
+  --c-ink-ll: #9E7E6B;
+  --c-bdr: #D6B89C;
+  --c-bdr-l: #E9D6C3;
+  --c-accent: #8A3F26;
+  --c-accent-l: #F2E0D6;
+  --c-green: #5C8A56;
+  --c-green-l: #E1EBD9;
+  --c-green-d: #3E6238;
+  --c-dan-blue: #2C5566;
+  --c-dan-blue-d: #17323E;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
