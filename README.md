@@ -69,7 +69,7 @@ _(add screenshots of the hotel selection screen, a restaurant list, and a restau
 
 | Hotel Selection | Restaurant List | Restaurant Detail |
 |:---:|:---:|:---:|
-| <img width="746" height="1164" alt="image" src="https://github.com/user-attachments/assets/fc645cc7-f161-41f1-aa95-1beb1a54353b" />| <img width="728" height="1474" alt="image" src="https://github.com/user-attachments/assets/57f2391f-9f0c-4d44-afab-5efba8e9af3d" />| <img width="732" height="1468" alt="image" src="https://github.com/user-attachments/assets/80fa41f4-ae6e-461f-aa48-f1ead1ec33d7" />|
+| <img width="732" height="1480" alt="image" src="https://github.com/user-attachments/assets/b1168931-da94-45f0-a25b-355af8f121ba" />| <img width="728" height="1474" alt="image" src="https://github.com/user-attachments/assets/57f2391f-9f0c-4d44-afab-5efba8e9af3d" />| <img width="732" height="1468" alt="image" src="https://github.com/user-attachments/assets/80fa41f4-ae6e-461f-aa48-f1ead1ec33d7" />|
 
 ## How It Works
 
