@@ -1,65 +1,89 @@
-# Korea Food Guide 🍜
-### A CIEE Restaurant Guide
+# Korea Food Guide — CIEE Restaurant App
 
-**Live Demo:** [https://lunashimca-crypto.github.io/restaurant-app-ciee/#/](https://lunashimca-crypto.github.io/restaurant-app-ciee/#/)
+A restaurant guide app built to help CIEE Korea program students find good, budget-friendly meals near their hotels — based on original research and an Excel database I compiled myself through in-person restaurant visits.
+
+**Live Demo:** https://lunashimca-crypto.github.io/restaurant-app-ciee/#/
+
+![status](https://img.shields.io/badge/status-active-brightgreen)
+![vite](https://img.shields.io/badge/build-vite-646CFF)
 
 ---
 
-## About
+## Why This Project
 
-Korea Food Guide is a web app designed to help American high school students who come to Korea through the CIEE (Council on International Educational Exchange) program easily and quickly find restaurants near their residence.
+CIEE Korea students are international visitors working with a limited daily food budget (~10,000 KRW), often unfamiliar with the area around their hotel and unsure what's actually good or affordable. Menus in Korean, unfamiliar food categories, and no easy way to compare options nearby made simple things like "where do I eat tonight" surprisingly stressful for new students.
 
-Students visiting Korea for the first time often struggle to know what restaurants are nearby or what food is available, due to language barriers and an unfamiliar environment. This app curates restaurants within walking distance of the two residences where students actually stay (Somerset and Botanik), organized by category, so students can make trustworthy choices right away without needing to search on their own.
+This app solves that by giving students a curated, hotel-specific restaurant list they can browse by cuisine type, price, and location — all pre-vetted so they know it's both within budget and worth eating at.
 
-## Features
+I led this project end to end, from research through deployment:
 
-### 1. Residence Selection (Where are you staying?)
-- On entering the app, students first select which residence they're staying at.
-- Currently supported residences: Somerset, Botanik (13 restaurants registered for each)
-- Includes a personalized touch where greetings change based on time of day (e.g., "Good Afternoon")
+- **Field research** — personally visited restaurants near both partner hotels (Best Western Premier Seoul Garden and Somerset Palace) to confirm pricing was within student budget and that food quality was solid
+- **Data collection & structuring** — built and maintained an Excel database of ~13 restaurants per hotel (~26 total), covering cuisine type, price/menu info, and location
+- **Content design** — organized restaurants into clear categories so students can quickly filter by what they're in the mood for
+- **AI-assisted development** — built the app using Claude (Anthropic) as a development partner: defined the requirements and app behavior, directed the code generation, edited in-app text and content directly in the codebase, and tested and deployed the final result
 
-### 2. Restaurant List by Residence
-- Shows a list of nearby restaurants with the message "Find your foods nearby [residence name]" based on the selected residence
-- Switch between the two residences using the top tabs
-- Each restaurant card displays a representative emoji icon, name, price range ($~$$), and walking time, so students can quickly compare budget and travel time.
+## Overview
 
-### 3. Curated Categories
-Restaurants are organized into three themes for easy browsing depending on the situation:
-- **Student Favorites** – Popular spots among students (e.g., Crazy Fry, Bukchon Gamasot Sundubu)
-- **Hidden Gems** – Lesser-known great finds (e.g., Namdo Siggaeg, Clear Beef Soup Goeum)
-- **Budget-Friendly Eats** – Affordable places to eat
-- Each category includes a "See all →" link to view more options
+The app presents a hotel-specific restaurant guide so students staying at either partner hotel can quickly find a place to eat that fits their budget and taste. Restaurants are organized by cuisine type and include pricing/menu info and location details.
 
-### 4. Save Feature (Your Saved Places)
-- Save favorite restaurants using the heart (♥) icon
-- View all saved restaurants in one place via "Your Saved Places" on the home screen
+The experience is designed to be:
 
-### 5. Simple Navigation
-- A Home button on every screen returns users to the start screen
-- A back (←) button allows navigation to the previous screen
+- **Hotel-specific** — separate restaurant lists for each partner hotel, so students only see relevant, walkable options
+- **Budget-aware** — every restaurant was field-checked to make sure it fits within the student meal budget
+- **Easy to browse** — filterable by cuisine type (Korean, Western, etc.) instead of one long undifferentiated list
 
-## Design Concept
+---
 
-The app uses a warm beige and brown color palette with serif typography to create a friendly, trustworthy feel similar to a travel guidebook. The card-based UI keeps information easy to scan at a glance, even with a lot of content.
+## Table of Contents
 
-## Target Users
+- [Why This Project](#why-this-project)
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Key Features](#key-features)
+- [Screenshots](#screenshots)
+- [How It Works](#how-it-works)
+- [Deployment](#deployment)
+- [Background](#background)
+- [Credits](#credits)
 
-- American high school students visiting Korea through the CIEE program
-- Students residing at Somerset or Botanik residences
-- Users who need to find nearby dining options quickly
+---
 
-## Future Improvements
+## Tech Stack
 
-- Restaurant detail pages (menu, photos, reviews, map integration)
-- Search and filter functionality (by price, food type, distance)
-- Multilingual support (English/Korean toggle)
-- Scalability to add new residences
-- Real map-based navigation integration
+- [Vite](https://vitejs.dev/) — build tool & dev server
+- JavaScript, HTML, CSS
+- Excel — used to research, structure, and maintain the restaurant database that powers the app's content
+- Built with [Claude](https://www.anthropic.com/claude) (Anthropic) as an AI development partner — code was generated and refined iteratively based on requirements and content I directed
+
+## Key Features
+
+- 🏨 Hotel-specific restaurant lists — separate guides for Best Western Premier Seoul Garden and Somerset Palace
+- 🍜 ~13 field-vetted restaurants per hotel, organized by cuisine type (Korean, Western, and more)
+- 💰 Pricing and menu info for every listed restaurant, chosen to fit within student meal budgets
+- 📍 Location details so students can find each restaurant from their hotel
+- ✅ Every restaurant personally visited and confirmed before being added to the list
+
+## Screenshots
+
+_(add screenshots of the hotel selection screen, a restaurant list, and a restaurant detail view)_
+
+| Hotel Selection | Restaurant List | Restaurant Detail |
+|:---:|:---:|:---:|
+| _screenshot_ | _screenshot_ | _screenshot_ |
+
+## How It Works
+
+1. **Choose a Hotel** — Students select their hotel (Best Western Premier Seoul Garden or Somerset Palace) to see restaurants within walking distance.
+2. **Browse by Cuisine** — Restaurants are organized by cuisine type, so students can filter to what they're craving.
+3. **Check Details** — Each listing includes price/menu info and location, so students can decide before they leave the hotel.
+4. **Eat with Confidence** — Since every restaurant was field-checked in person, students know the option is both within budget and worth trying.
+
+## Deployment
+
+This app is deployed via **GitHub Pages** and is live at:
+https://lunashimca-crypto.github.io/restaurant-app-ciee/#/
 
 ## Background
 
-This app was planned and built directly by CIEE Korea program staff to address a real need students face: a lack of information about restaurants near their residence.
+Built for the same CIEE Korea program that the [War Memorial Scavenger Hunt](#) app supports — this project addresses a different, everyday pain point: helping international students navigate food choices in an unfamiliar city on a fixed budget. The restaurant data was collected independently through direct site visits rather than pulled from an existing source, so the recommendations reflect real, first-hand vetting.
 
----
-
-Made with ❤️ for CIEE Korea students
