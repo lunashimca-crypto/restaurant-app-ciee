@@ -87,5 +87,5 @@ Built for the same CIEE Korea Internship, helping international students have be
 
 ## Other CIEE Projects
 
-- [War memorial Scavenger hunt][(https://github.com/lunashimca-crypto/restaurant-app-ciee)](https://lunashimca-crypto.github.io/ciee-war-memorial-app/)
 - [Gyeonghuigung Palace & Seoul Museum of History](https://github.com/lunashimca-crypto/ciee-gyeonghuigung-app)
+- [War Memorial of Korea — Live Demo](https://lunashimca-crypto.github.io/ciee-war-memorial-app/)
