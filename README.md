@@ -1,6 +1,6 @@
 # Korea Food Guide — CIEE Restaurant App
 
-A restaurant guide app built to help CIEE Korea program students find good, budget-friendly meals near their hotels — based on original research and an Excel database I compiled myself through in-person restaurant visits.
+A restaurant guide app built to help CIEE Korea program students find nice, budget-friendly restaurants near their hotels. Data is based on our team's research through in-person restaurant visits and an Excel database. 
 
 **Live Demo:** https://lunashimca-crypto.github.io/restaurant-app-ciee/#/
 
@@ -13,11 +13,11 @@ A restaurant guide app built to help CIEE Korea program students find good, budg
 
 CIEE Korea students are international visitors working with a limited daily food budget (~10,000 KRW), often unfamiliar with the area around their hotel and unsure what's actually good or affordable. Menus in Korean, unfamiliar food categories, and no easy way to compare options nearby made simple things like "where do I eat tonight" surprisingly stressful for new students.
 
-This app solves that by giving students a curated, hotel-specific restaurant list they can browse by cuisine type, price, and location — all pre-vetted so they know it's both within budget and worth eating at.
+This app solves that by giving students a hotel specific restaurant list they can browse by cuisine type, price, and location. All locations are pre-visited so it is both within budget and worth eating at.
 
 I led this project end to end, from research through deployment:
 
-- **Field research** — personally visited restaurants near both partner hotels (Best Western Premier Seoul Garden and Somerset Palace) to confirm pricing was within student budget and that food quality was solid
+- **Field research** — personally visited restaurants near both partner hotels (Best Western Premier Seoul Garden and Somerset Palace) to confirm pricing was within student budget and that food quality was nice
 - **Data collection & structuring** — built and maintained an Excel database of ~13 restaurants per hotel (~26 total), covering cuisine type, price/menu info, and location
 - **Content design** — organized restaurants into clear categories so students can quickly filter by what they're in the mood for
 - **AI-assisted development** — built the app using Claude (Anthropic) as a development partner: defined the requirements and app behavior, directed the code generation, edited in-app text and content directly in the codebase, and tested and deployed the final result
