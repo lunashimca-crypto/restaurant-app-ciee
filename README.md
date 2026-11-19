@@ -83,5 +83,9 @@ https://lunashimca-crypto.github.io/restaurant-app-ciee/#/
 
 ## Background
 
-Built for the same CIEE Korea program that the [War Memorial Scavenger Hunt](#) app supports — this project addresses a different, everyday pain point: helping international students navigate food choices in an unfamiliar city on a fixed budget. The restaurant data was collected independently through direct site visits rather than pulled from an existing source, so the recommendations reflect real, first-hand vetting.
+Built for the same CIEE Korea Internship, helping international students have better food choices in an unfamiliar city on a fixed budget. Our team collected the restaurant data independently through direct site visits rather than from an existing source.
 
+## Other CIEE Projects
+
+- [War memorial Scavenger hunt][(https://github.com/lunashimca-crypto/restaurant-app-ciee)](https://lunashimca-crypto.github.io/ciee-war-memorial-app/)
+- [Gyeonghuigung Palace & Seoul Museum of History](https://github.com/lunashimca-crypto/ciee-gyeonghuigung-app)
